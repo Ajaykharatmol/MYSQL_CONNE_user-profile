@@ -1,0 +1,74 @@
+{% extends 'base/base.html' %}
+
+{% block title %}Dashboard{% endblock title %}
+
+{% block content %}
+    
+    
+    <div class="clearfix"></div>
+
+    <!-- Orders -->
+    <div class="orders">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="box-title">Users</h4>
+                    </div>
+                    <div class="card-body--">
+                        <div class="table-stats order-table ov-h">
+                            <table class="table ">
+                                <thead>
+                                    <tr>
+                                        <th class="serial">Full name</th>
+                                        <th>Profile image</th>
+                                        <th>Email ID</th>
+                                        <th>Short description</th>
+                                        <th>Long description</th>
+                                        <th>Degree</th>
+                                        <th>Year of passing</th>
+                                        <th>Certificate image</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for d in depts %}
+                                    <tr>
+                                        <td>{{ d.Full_name }}</td>
+                                        <td>{{ d.Profile_image }}</td>
+                                        <td>{{ d.Email_ID }}</td>
+                                        <td>{{ d.Short_description }}</td>
+                                        <td>{{ d.Long_description }}</td>
+                                        <td>{{ d.Degree }}</td>
+                                        <td>{{ d.Year_of_passing }}</td>
+                                        <td>{{ d.Certificate_image }}</td>
+                                        <td>
+                                            <div class="row">
+                                                <div class="col-6">  <a href="edit/{{d.id}}" class="btn btn-success" role="button">Edit</a></div>
+                                               
+                                               <div class="col-6">  <a href="delete/{{d.id}}" class="btn btn-danger" role="button">Del</a></div>
+                                                
+                                                
+                    
+                                            </div>
+                                            
+                                            
+                                            </td>
+
+                                        
+                                    </tr>
+                                    {% endfor %}
+                                   
+                                       
+                                    
+                                </tbody>
+                            </table>
+                        </div> <!-- /.table-stats -->
+                    </div>
+                </div> <!-- /.card -->
+            </div>  <!-- /.col-lg-8 -->
+
+            
+        </div>
+    </div>
+    <!-- /.orders -->
+{% endblock content %}

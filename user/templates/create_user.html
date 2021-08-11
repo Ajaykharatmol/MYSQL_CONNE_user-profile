@@ -1,0 +1,93 @@
+{% extends 'base/base.html' %}
+
+{% block title %}{% endblock title %}
+
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+    <div class="breadcrumbs-inner">
+        <div class="row m-0">
+            <div class="col-sm-4">
+                <div class="page-header float-left">
+                    <div class="page-title">
+                        <h1>Dashboard</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-8">
+                <div class="page-header float-right">
+                    <div class="page-title">
+                        <ol class="breadcrumb text-right">
+                            <li><a href="#"></a></li>
+                            
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock breadcrumbs %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-header">
+                <strong class="card-title">Create Users</strong>
+            </div>
+            <div class="card-body">
+                <!-- Credit Card -->
+                <div id="pay-invoice">
+                    <div class="card-body">
+                        <form  method="POST" action="addUser" enctype="multipart/form-data">
+                       
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <label for="name" class="control-label mb-1">Full name</label>
+                                {{ form.Full_name }}
+                            </div>
+                            <div class="form-group">
+                                <label for="address" class="control-label mb-1">Profile image</label>
+                                {{ form.Profile_image }}
+                            </div>
+                            <div class="form-group">
+                                <label for="name" class="control-label mb-1">Email ID</label>
+                                {{ form.Email_ID }}
+                            </div>
+                            <div class="form-group">
+                                <label for="address" class="control-label mb-1">Short description </label>
+                                {{ form.Short_description  }}
+                            </div>
+                            <div class="form-group">
+                                <label for="name" class="control-label mb-1">Long description</label>
+                                {{ form.Long_description }}
+                            </div>
+                            <div class="form-group">
+                                <label for="address" class="control-label mb-1">Degree</label>
+                                {{ form.Degree }}
+                            </div>
+                            <div class="form-group">
+                                <label for="name" class="control-label mb-1">Year of passing</label>
+                                {{ form.Year_of_passing }}
+                            </div>
+                            <div class="form-group">
+                                <label for="address" class="control-label mb-1">Certificate image</label>
+                                {{ form.Certificate_image }}
+                            </div>
+                           
+                            
+                               
+                                    <input type="submit" class="btn  btn-info btn-block" value="Save change">
+                                   
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div> <!-- .card -->
+
+    </div><!--/.col-->
+</div>
+{% endblock content %}
